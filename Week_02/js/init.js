@@ -10,3 +10,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 let marker = L.marker([34.0709, -118.444]).addTo(map)
 		.bindPopup('Math Sciences')
 		.openPopup();
+
+		let marker2 = L.marker([33.99678874448942, -118.03927749298683]).addTo(map)
+		.bindPopup('Whittier Village Cinemas')
+		.openPopup();
