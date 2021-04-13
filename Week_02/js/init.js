@@ -1,5 +1,4 @@
-// JavaScript const variable declaration
-const map = L.map('map').setView([34.0709, -118.444], 15);
+const map = L.map('map').setView([34.0709, -118.444], 5);
 
 // Leaflet tile layer, i.e. the base map
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -8,9 +7,21 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 //JavaScript let variable declaration to create a marker
 let marker = L.marker([34.0709, -118.444]).addTo(map)
-		.bindPopup('Math Sciences')
-		.openPopup();
+		.bindPopup('Math Sciences 4328 aka the Technology Sandbox<br> is the lab where I work in ')
+		// .openPopup();
 
-		let marker2 = L.marker([33.99678874448942, -118.03927749298683]).addTo(map)
-		.bindPopup('Whittier Village Cinemas')
-		.openPopup();
+fetch("js/map.geojson")
+	.then(response => {
+		return response.json();
+		})
+    .then(data =>{
+        // Basic Leaflet method to add GeoJSON data
+                        // the leaflet method for adding a geojson
+            L.geoJSON(data, {
+                style: function (feature) {
+                    return {color: 'red'};
+                }
+            }).bindPopup(function (layer) {
+                return layer.feature.properties.place;
+            }).addTo(map);
+        });
