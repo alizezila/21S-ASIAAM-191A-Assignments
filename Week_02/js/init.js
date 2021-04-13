@@ -6,8 +6,8 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 //JavaScript let variable declaration to create a marker
-let marker = L.marker([34.0709, -118.444]).addTo(map)
-		.bindPopup('Math Sciences 4328 aka the Technology Sandbox<br> is the lab where I work in ')
+let marker = L.marker([33.979090494838346, -118.03689217480944]).addTo(map)
+		.bindPopup('Whittier Village Cinemas <br> I skipped school for a date in 2017. <br> Watched the movie "Your Name" and cried my eyes out.')
 		// .openPopup();
 
 fetch("js/map.geojson")
