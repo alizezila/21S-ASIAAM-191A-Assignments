@@ -6,9 +6,11 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 //JavaScript let variable declaration to create a marker
-let marker = L.marker([33.979090494838346, -118.03689217480944]).addTo(map)
-		.bindPopup('Whittier Village Cinemas <br> I skipped school for a date in 2017. <br> Watched the movie "Your Name" and cried my eyes out.')
+let marker = L.marker([34.27186947278245, -118.41718638380269]).addTo(map)
+		.bindPopup('Hope of the Valley Parking Site')
 		// .openPopup();
+let marker2 = L.marker([34.70382842726976, -118.2345813029235]).addTo(map)
+		.bindPopup('Volunteers of America LA Parking Site <br> High Desert MACC Homeless Shelter')
 
 fetch("js/map.geojson")
 	.then(response => {
