@@ -6,26 +6,46 @@ html, body {
      display: grid;
      grid-template-rows: .1fr .30fr .60fr .05fr;
      grid-template-columns: 1fr;
-     grid-template-areas: "header" "main" "map"  "footer";
+     grid-template-areas: "header" "main" "map" "list" "footer";
      justify-content: center;
+     background-color: rgb(191, 216, 240);
+     color:rgba(12, 12, 12, 0.959);
  }
 
  header {
     grid-area: header;
     display: grid;
-    grid-template-columns: .2fr .6fr .2fr;
+    grid-template-columns: .3fr .4fr .3fr;
     justify-content: center;
+    text-align: center;
+    color:rgb(0, 0, 0);
  }
 
 .main {
     display: grid;
     grid-area: main;
-    background-color: aqua;
+    border: 3px ridge rgb(213, 44, 219);
+    padding: 10px;
+    background-color: rgba(161, 201, 164, 0.911);
+}
+.main2 {
+    display: grid;
+    grid-area: main2;
+    background-color: rgb(161, 201, 164, 0.897);
+    color:rgba(153, 84, 84, 0.959);
 }
 
 #map {
     grid-area: map;
-    height: 40vh;
+    height: 50vh;
+}
+
+.list {
+    display: grid;
+    grid-area: main;
+    border: 3px ridge rgb(213, 44, 219);
+    padding: 10px;
+    background-color: rgba(161, 201, 164, 0.911);
 }
 
 #footer {
