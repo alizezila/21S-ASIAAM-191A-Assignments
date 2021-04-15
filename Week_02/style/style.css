@@ -8,8 +8,8 @@ html, body {
      grid-template-columns: 1fr;
      grid-template-areas: "header" "main" "map" "list" "footer";
      justify-content: center;
-     background-color: rgb(191, 216, 240);
-     color:rgba(12, 12, 12, 0.959);
+     background-color: rgb(160, 229, 238);
+     color:rgba(0, 0, 0, 0.959);
  }
 
  header {
@@ -26,12 +26,12 @@ html, body {
     grid-area: main;
     border: 3px ridge rgb(213, 44, 219);
     padding: 10px;
-    background-color: rgba(161, 201, 164, 0.911);
+    background-color:rgb(161, 201, 164, 0.911);
 }
 .main2 {
     display: grid;
     grid-area: main2;
-    background-color: rgb(161, 201, 164, 0.897);
+    background-color: rgb(161, 201, 164, 0.911);
     color:rgba(153, 84, 84, 0.959);
 }
 
@@ -44,7 +44,7 @@ html, body {
     display: grid;
     grid-area: main;
     border: 3px ridge rgb(213, 44, 219);
-    padding: 10px;
+    padding: 9px;
     background-color: rgba(161, 201, 164, 0.911);
 }
 
