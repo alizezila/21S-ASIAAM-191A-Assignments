@@ -27,14 +27,13 @@ function createButtons(lat,lng,title){
 
     // attach an event listner to the button with Leaflet's map.flyTo
     newButton.addEventListener('click', function(){
-        map.flyTo([lat,lng]); 
-        zoom = 10;
+        map.flyTo([lat,lng],15); 
     })
     document.body.appendChild(newButton); //this adds the button to our page.
 }
 
 // use our marker functions
-addMarker(40.73602157283994, -73.99738555094657,'Washington Square Park','Manhattan, New York')
+addMarker(40.7309, -73.9973,'Washington Square Park','Manhattan, New York')
 addMarker(36.11329640577107, -112.11268368742553,'Grand Canyon','National Park in Arizona')
 addMarker(34.129631348789204, -118.11452419999999,'Huntington Library','Library and Botanical Gardens in Pasadena,CA')
 addMarker(37.77705092430431, -122.43372246557624,'Alamo Square Park','San Francisco, CA')
