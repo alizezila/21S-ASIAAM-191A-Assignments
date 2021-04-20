@@ -21,15 +21,15 @@ function addMarker(lat,lng,title,message){
 function createButtons(lat,lng,title){
     const newButton = document.createElement("button"); // adds a new button
     newButton.id = "button"+title; // gives the button a unique id
-    newButton.innerHTML = title; // gives the button a title
-    newButton.setAttribute("lat",lat); // sets the latitude 
-    newButton.setAttribute("lng",lng); // sets the longitude 
+    newButton.innerHTML = title; // title for button
+    newButton.setAttribute("lat",lat); // latitude 
+    newButton.setAttribute("lng",lng); // longitude 
 
     // attach an event listner to the button with Leaflet's map.flyTo
     newButton.addEventListener('click', function(){
-        map.flyTo([lat,lng],15); 
+        map.flyTo([lat,lng],15); // i added a zoom!
     })
-    document.body.appendChild(newButton); //this adds the button to our page.
+    document.body.appendChild(newButton); //button
 }
 
 // use our marker functions
