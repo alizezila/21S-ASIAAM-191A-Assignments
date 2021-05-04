@@ -12,10 +12,3 @@ fetch(url)
     .then(data =>{
         console.log(data)
     })
-
-function addMarker(lat,lon,message){
-        L.marker([lat,lng]).addTo(map).bindPopup(`<h2>${message}</h2>`)
-        return message    
-}
-
-addMarker(37,-122,'home land!')
