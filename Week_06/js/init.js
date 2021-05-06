@@ -6,13 +6,13 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 function addMarker(data){
         // console.log(data)
-        // these are the names of our lat/long fields in the google sheets:
-        L.marker([data.lat,data.lng]).addTo(map).bindPopup(`<h2>${data.timestamp}</h2>`)
+        // these are the names of our fields in the google sheets:
+        L.marker([data.lat,data.long]).addTo(map).bindPopup(`<h2>${data.wherewasthebestplaceyouvebeencampinghadoutdooradventures}</h2>${"Enjoyed it? " + data.didyoulikeit} <p>${"Your Story: " + data.optionalshareastoryaboutyourtripifyoudlike}</p>`)
         return data.timestamp
 }
 
-let url = "https://spreadsheets.google.com/feeds/list/1j3a2do9HIS6xvpBsKMjmI4soNaqGdlnIkwYQHktmp1U/oua1awz/public/values?alt=json"
 
+let url = "https://spreadsheets.google.com/feeds/list/1PyklxDCCB1SKpSUY4cZCEEnYed9ebBvRuXWGGJaZT7E/o57kdav/public/values?alt=json"
 fetch(url)
 	.then(response => {
 		return response.json();
