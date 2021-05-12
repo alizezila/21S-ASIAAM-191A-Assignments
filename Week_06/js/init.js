@@ -1,4 +1,4 @@
-const map = L.map('map').setView([34.0709, -118.444], 9
+const map = L.map('map').setView([36.737593086418656, -119.7856438707979], 6
         );
     
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -8,10 +8,12 @@ const map = L.map('map').setView([34.0709, -118.444], 9
 function addMarker(data){
         // console.log(data)
         // these are the names of our lat/long fields in the google sheets:
-        L.marker([data.lat,data.long]).addTo(map).bindPopup(`<h2>${data.wherewasthebestplaceyouvebeencampinghadoutdooradventures}</h2>`)
-        // adding our create button function
+        L.marker([data.lat,data.long]).addTo(map).bindPopup(`<h2>${data.wherewasthebestplaceyouvebeencampinghadoutdooradventures}</h2>${"Enjoyed it? " + data.didyoulikeit} <p>${"Your Story: " + data.optionalshareastoryaboutyourtripifyoudlike}</p>`)
+       // L.circle([data.lat,data.long],{ color: 'orange', fillColor: '#f03', fillOpacity: 0.5,  radius: 400 }).addTo(map).bindPopup(`<h2>${data.bestdish}</h2>`+`<p><b>Location:</b>${data.whereisitat}</p>`+`<p><b>Name or Description:</b>${data.name}</p>`+`<p><b>How did you find it:</b>${data.yourstory}</p>`)
+     
+       // adding our create button function
         createButtons(data.lat,data.long,data.wherewasthebestplaceyouvebeencampinghadoutdooradventures)
-        return data.wherewasthebestplaceyouvebeencampinghadoutdooradventures
+        return data.timestamp
 }
 
 function createButtons(lat,long,title){
@@ -21,7 +23,7 @@ function createButtons(lat,long,title){
         newButton.setAttribute("lat",lat); // sets the latitude 
         newButton.setAttribute("lng",long); // sets the longitude 
         newButton.addEventListener('click', function(){
-            map.flyTo([lat,long],14); //this is the flyTo from Leaflet
+            map.flyTo([lat,long],10); //this is the flyTo from Leaflet
         })
         const spaceForButtons = document.getElementById("contents")
         spaceForButtons.appendChild(newButton);//this adds the button to our page.
