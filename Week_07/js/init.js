@@ -87,7 +87,7 @@ function formatData(theData){
 let layers = {
 	"Loved it!": Likedit,
 	"Not my cup of tea": Didntlikeit,
-        "Mixed feelings...": Meh
+    "Mixed feelings...": Meh
 }
 L.control.layers(null,layers).addTo(map)
 
