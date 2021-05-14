@@ -42,9 +42,6 @@ fetch(url)
 )
 
 
-
-
-
 function formatData(theData){
         const formattedData = [] /* this array will eventually be populated with the contents of the spreadsheet's rows */
         const rows = theData.feed.entry
