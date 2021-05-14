@@ -79,6 +79,7 @@ function formatData(theData){
         formattedData.forEach(addMarker)
         Likedit.addTo(map)
         Didntlikeit.addTo(map)
+        Meh.addTo(map)
         let allLayers = L.featureGroup([Likedit,Didntlikeit,Meh]);
         map.fitBounds(allLayers.getBounds());        
 }
