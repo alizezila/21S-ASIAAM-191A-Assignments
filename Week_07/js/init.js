@@ -26,7 +26,7 @@ let circleOptions = {
     radius: 6,
     fillColor: "#ff7800",
     color: "#000",
-    weight: 1,
+    weight: 2,
     opacity: 1,
     fillOpacity: 0.8
 }
