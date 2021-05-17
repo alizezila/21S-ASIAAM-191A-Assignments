@@ -2,11 +2,15 @@ const map = L.map('map').setView([36.73724014548915, -119.78847179822944], 6);
 
 const url = "https://spreadsheets.google.com/feeds/list/1PyklxDCCB1SKpSUY4cZCEEnYed9ebBvRuXWGGJaZT7E/o57kdav/public/values?alt=json"
 
-let Stadia_OSMBright = L.tileLayer('https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png', {
-	maxZoom: 20,
-	attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+let Jawg_Light = L.tileLayer('https://{s}.tile.jawg.io/jawg-light/{z}/{x}/{y}{r}.png?access-token={accessToken}', {
+	attribution: '<a href="http://jawg.io" title="Tiles Courtesy of Jawg Maps" target="_blank">&copy; <b>Jawg</b>Maps</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+	minZoom: 3.5,
+	maxZoom: 22,
+    setView: [36.73724014548915, -119.78847179822944],
+	subdomains: 'abcd',
+	accessToken: 'OuvACUpBzGJZj9jf0XwvWYUxvTDaP7dBnUGs6NZ2mZKC4qjJSKDK7G8IyLdpSSKa'
 });
-Stadia_OSMBright.addTo(map)
+Jawg_Light.addTo(map)
 
 fetch(url)
 	.then(response => {
