@@ -4,7 +4,7 @@ const url = "https://spreadsheets.google.com/feeds/list/1PyklxDCCB1SKpSUY4cZCEEn
 
 let Jawg_Light = L.tileLayer('https://{s}.tile.jawg.io/jawg-light/{z}/{x}/{y}{r}.png?access-token={accessToken}', {
 	attribution: '<a href="http://jawg.io" title="Tiles Courtesy of Jawg Maps" target="_blank">&copy; <b>Jawg</b>Maps</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-	minZoom: 3.5,
+	minZoom: 0,
 	maxZoom: 22,
     setView: [36.73724014548915, -119.78847179822944],
 	subdomains: 'abcd',
