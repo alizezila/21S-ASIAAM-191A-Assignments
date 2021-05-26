@@ -1,4 +1,4 @@
-const map = L.map('map').setView([36.737593086418656, -119.7856438707979], 6
+const map = L.map('map').setView([32.63188332081661, -115.4562838930214], 6
         );
     
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -7,30 +7,11 @@ const map = L.map('map').setView([36.737593086418656, -119.7856438707979], 6
 
 function addMarker(data){
         // console.log(data)
-        // these are the names of our lat/long fields in the google sheets:
-        L.marker([data.lat,data.long]).addTo(map).bindPopup(`<h2>${data.wherewasthebestplaceyouvebeencampinghadoutdooradventures}</h2>${"Enjoyed it? " + data.didyoulikeit} <p>${"Your Story: " + data.optionalshareastoryaboutyourtripifyoudlike}</p>`)
-       // L.circle([data.lat,data.long],{ color: 'orange', fillColor: '#f03', fillOpacity: 0.5,  radius: 400 }).addTo(map).bindPopup(`<h2>${data.bestdish}</h2>`+`<p><b>Location:</b>${data.whereisitat}</p>`+`<p><b>Name or Description:</b>${data.name}</p>`+`<p><b>How did you find it:</b>${data.yourstory}</p>`)
-     
-       // adding our create button function
-        createButtons(data.lat,data.long,data.wherewasthebestplaceyouvebeencampinghadoutdooradventures)
+        L.marker([data.lat,data.lng]).addTo(map).bindPopup(`<h2>${"Location: " + data.inwhatcityortowndidtheincidenthappen}</h2>${data.timestamp}<br>${"Gender: " + data.whatgenderdoyouidentifywith}<br> ${"Age: " + data.howoldareyou}`)
         return data.timestamp
 }
 
-function createButtons(lat,long,title){
-        const newButton = document.createElement("button"); // adds a new button
-        newButton.id = "button"+title; // gives the button a unique id
-        newButton.innerHTML = title; // gives the button a title
-        newButton.setAttribute("lat",lat); // sets the latitude 
-        newButton.setAttribute("lng",long); // sets the longitude 
-        newButton.addEventListener('click', function(){
-            map.flyTo([lat,long],10); //this is the flyTo from Leaflet
-        })
-        const spaceForButtons = document.getElementById("contents")
-        spaceForButtons.appendChild(newButton);//this adds the button to our page.
-}
- 
-
-let url = "https://spreadsheets.google.com/feeds/list/1PyklxDCCB1SKpSUY4cZCEEnYed9ebBvRuXWGGJaZT7E/o57kdav/public/values?alt=json"
+let url = "https://spreadsheets.google.com/feeds/list/1gB_pIq1Y0WGMzJjC8qPA5oGT6sDAfkhZLL_ag1GL3j8/oiz5byp/public/values?alt=json"
 fetch(url)
 	.then(response => {
 		return response.json();
